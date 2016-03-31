@@ -1,0 +1,15 @@
+<%= form_for @student do |f| %>
+<% if @student.errors.any? %>
+	<h2><%= pluralize(@student.errors.count, "error") %> Prohibited this article from being saved: </h2>
+	<ul>
+		<% @student.errors.full_messages.each do |msg| %>
+			<li><%= msg %></li>
+		<% end %>
+	</ul>
+<% end %>
+	<p><b> Name: </b></p><%= f.text_field :name %>
+	<p><b> Roll no: </b></p><%= f.text_field :roll_no %>
+	<p><b> Class: </b></p><%= f.text_field :student_class %>
+	<p><b> Description: </b></p><%= f.text_area :description %>
+	<p><%= f.submit %></p>
+<% end %>

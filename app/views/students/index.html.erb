@@ -1,0 +1,14 @@
+<div class="container">	
+
+		<h1>Students<%= link_to "Add Student", new_student_path, class: "btn btn-style pull-right" %>
+		</h1>	<hr/>
+
+		<% @students.find_each do |student| %>	
+		<div class="col-md-4">
+			<div class="student">
+				<h2 class="student-title"><%= student.name %></h2>
+				<%= link_to "View Details", student_path(student), class: "btn-custom"%>
+			</div>	
+		</div>	
+		<% end %>		
+</div>	
